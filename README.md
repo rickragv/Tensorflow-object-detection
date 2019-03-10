@@ -1,5 +1,5 @@
 # Tensorflow-object-detection instruction
-1. Before serving with a GPU, in addition to installing Docker, you will need:
+1. Before running with a GPU, in addition to installing Docker, you will need:
 
     Up-to-date NVIDIA drivers for your system
     nvidia-docker: You can follow the installation instructions : https://github.com/NVIDIA/nvidia-docker#quick-start
