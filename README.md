@@ -4,7 +4,7 @@
     Up-to-date NVIDIA drivers for your system
     **nvidia-docker**: You can follow the installation instructions : **https://github.com/NVIDIA/nvidia-docker#quick-start**
 
-2. Docker Build 
+2. Docker Build or you can pull from **https://hub.docker.com/r/rickragvdocker/tensorflow-object-detection-gpu**
 
 3. RUN docker image.
 	This docker can be run for training and evalutaion of model, by quickly setting environment variable - PROFILE to EVAL (for evaluation) and default is training.
