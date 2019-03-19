@@ -1,5 +1,5 @@
 FROM tensorflow/tensorflow:1.12.0-devel-gpu-py3
-LABEL maintainer=risingh@here.com
+LABEL maintainer=rickragv@gmail.com
 RUN apt-get update && apt-get install -y \
   git
 RUN pip install --upgrade pip
