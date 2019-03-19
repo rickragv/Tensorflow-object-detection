@@ -16,7 +16,7 @@
 	    -e PIPELINE_CONFIG=*.config \  
 	    -e NUM_CLONES=1 \  
 	    -it -p 8080:8080 \
-	    --mount type=bind,source={source_path},target={destination_path} \
+	    --mount type=bind,source={source_path},target=/root/models/research/{folder_name} \
 	    tensorflow-object-detection 
 
 	**To run for evalutation:**
@@ -27,7 +27,7 @@
 	    -e NUM_CLONES =1 \
 	     -e PROFILE = EVAL \
 	     -it -p 8080:8080 \
-	    --mount type=bind,source={source_path},target={destination_path}\
+	    --mount type=bind,source={source_path},target=/root/models/research/{folder_name} \
 	    tensorflow-object-detection 
     
     Directory Structure for source_path 
