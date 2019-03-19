@@ -10,6 +10,7 @@
 	This docker can be run for training and evalutaion of model, by quickly setting environment variable - PROFILE to EVAL (for evaluation) and default is training.
 	
 	**To run for training:**
+	
     docker run --runtime=nvidia \
     -e NVIDIA_VISIBLE_DEVICES=0 \ 
     -e PIPELINE_CONFIG=*.config \  
@@ -19,6 +20,7 @@
     tensorflow-object-detection 
 
 	**To run for evalutation:**
+	
 	    docker run --runtime =nvidia \
 	    -e NVIDIA_VISIBLE_DEVICES =0 \ 
 	    -e PIPELINE_CONFIG =*.config \  
