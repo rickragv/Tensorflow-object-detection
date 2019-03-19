@@ -1,5 +1,5 @@
 FROM tensorflow/tensorflow:1.12.0-devel-gpu-py3
-LABEL maintainer=rickragv@gmail.com
+LABEL maintainer=risingh@here.com
 RUN apt-get update && apt-get install -y \
   git
 RUN pip install --upgrade pip
@@ -49,17 +49,11 @@ RUN echo "export PYTHONPATH=${PYTHONPATH}:`pwd`:`pwd`/slim" >> ~/.bashrc
 ENTRYPOINT protoc object_detection/protos/*.proto --python_out=.
 RUN export PYTHONPATH=$PYTHONPATH:/root/models/research:/root/models/research/slim 
 
+#WORKDIR object_detection/
 EXPOSE 8080
 
 ENV PYTHONPATH=$PYTHONPATH:/root/models/research:/root/models/research/slim 
+ADD script.sh script.sh
+RUN ["chmod", "+x", "script.sh"]
 
-#ENTRYPOINT tensorboard --logdir=training/checkpoint --port=8080 &
-ENTRYPOINT  python object_detection/train.py \
-    --logtostderr \
-    --pipeline_config_path=training/${PIPELINE_CONFIG} \
-    --train_dir=training/checkpoint \
-    --num_clones=${NUM_CLONES}
-    
-
-CMD ["tensorboard","--logdir=training/checkpoint","--port=8080", "&"]
-
+ENTRYPOINT  sh script.sh
