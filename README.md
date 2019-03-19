@@ -11,13 +11,13 @@
 	
 	**To run for training:**
 	
-    docker run --runtime=nvidia \
-    -e NVIDIA_VISIBLE_DEVICES=0 \ 
-    -e PIPELINE_CONFIG=*.config \  
-    -e NUM_CLONES=1 \  
-    -it -p 8080:8080 \
-    --mount type=bind,source={source_path},target={destination_path} \
-    tensorflow-object-detection 
+	    docker run --runtime=nvidia \
+	    -e NVIDIA_VISIBLE_DEVICES=0 \ 
+	    -e PIPELINE_CONFIG=*.config \  
+	    -e NUM_CLONES=1 \  
+	    -it -p 8080:8080 \
+	    --mount type=bind,source={source_path},target={destination_path} \
+	    tensorflow-object-detection 
 
 	**To run for evalutation:**
 	
@@ -31,19 +31,19 @@
 	    tensorflow-object-detection 
     
     Directory Structure for source_path 
-    source_path
+		    source_path
     
-      |—- pipeline.config
+	      |—- pipeline.config
 
-      ├── checkpoint
+	      ├── checkpoint
 
-      ├── eval
+	      ├── eval
 
-      ├── pretrained_checkpoint
+	      ├── pretrained_checkpoint
 
-      └── tfrecord
+	      └── tfrecord
 
-            ├── test
+	            ├── test
 
-            └── train
+	            └── train
 
