@@ -25,7 +25,7 @@
 	    -e NVIDIA_VISIBLE_DEVICES =0 \ 
 	    -e PIPELINE_CONFIG =*.config \  
 	    -e NUM_CLONES =1 \
-	     -e PROFILE = EVAL
+	     -e PROFILE = EVAL \
 	     -it -p 8080:8080 \
 	    --mount type=bind,source={source_path},target={destination_path}\
 	    tensorflow-object-detection 
